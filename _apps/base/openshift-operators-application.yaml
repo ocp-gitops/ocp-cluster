@@ -4,7 +4,7 @@ metadata:
   name: openshift-operators-application
   namespace: openshift-gitops
 spec:
-  project: default
+  project: cluster
   source:
     repoURL: 'https://github.com/ocp-gitops/ocp-cluster.git'
     path: openshift-operators/overlays/default

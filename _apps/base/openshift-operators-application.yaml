@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: openshift-operators-application
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/ocp-gitops/ocp-cluster.git
+    targetRevision: main
+    path: openshift-operators/overlay/default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: openshift-operators
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - Validate=false

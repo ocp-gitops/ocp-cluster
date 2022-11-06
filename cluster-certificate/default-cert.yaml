@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: default-apps-dev-snimmo-com-certificate
+  namespace: default
+spec:
+  secretName: default-apps-dev-snimmo-com-tls
+  issuerRef:
+    name: letsencrypt-staging-cluster-issuer
+    kind: ClusterIssuer
+  dnsNames:
+    - "default.apps.dev.snimmo.com"

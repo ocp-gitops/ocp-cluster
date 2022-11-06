@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: test-apps-dev-snimmo-com-certificate
+  namespace: test
+spec:
+  secretName: test-apps-dev-snimmo-com-tls
+  issuerRef:
+    name: letsencrypt-staging-cluster-issuer
+    kind: ClusterIssuer
+  dnsNames:
+    - "test.apps.dev.snimmo.com"
